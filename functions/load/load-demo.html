@@ -1,0 +1,43 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ load Demo ------------------------------ */
+            "load":
+            {
+                run: function(id)
+                {
+                    $('#'+id).html('<img src="/function-demos/images/loading.gif" />');
+                    $('#'+id).load('http://www.jquery4u.com .header');
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Using .load() to grab HTML content from another web page</p>
+<p><a href="#" id="load-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="load-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="load-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="load"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

@@ -1,0 +1,72 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ append Demo ------------------------------ */
+            "append":
+            {
+                run: function(id)
+                {
+                    var txt = $('#'+id+' span:first').html();
+                    $('#'+id+' a.append').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        //console.log(txt);
+                        $('#'+id+' .innerDiv').append(txt);
+                    });
+                    $('#'+id+' a.prepend').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        //console.log(txt);
+                        $('#'+id+' .innerDiv').prepend(txt);
+                    });
+                    $('#'+id+' a.after').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        //console.log(txt);
+                        $('#'+id+' .innerDiv').after(txt);
+                    });
+                    $('#'+id+' a.before').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        //console.log(txt);
+                        $('#'+id+' .innerDiv').before(txt);
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' .outerDiv').html('<p>outerDiv</p><div class="innerDiv" style="border:1px solid blue; padding:25px;"><p>innerDiv</p></div>');
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Inserting content into your web page.</p>
+<p><a href="#" id="append-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="append-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="append-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="append">
+txt = '<span>This is the content we wish to insert.</span>'<br/>
+<a href="#" class="append">innerDiv.<strong>append</strong>(txt)</a> | <a href="#" class="prepend">innerDiv.<strong>prepend</strong>(txt)</a> | <a href="#" class="after">innerDiv.<strong>after</strong>(txt)</a> | <a href="#" class="before">innerDiv.<strong>before</strong>(txt)</a><br/>
+<div class="outerDiv" style="border:1px solid orange; padding:25px;"><p>outerDiv</p>
+    <div class="innerDiv" style="border:1px solid blue; padding:25px;"><p>innerDiv</p></div>
+</div>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

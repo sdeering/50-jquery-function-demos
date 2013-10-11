@@ -1,0 +1,41 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ slideToggle Demo ------------------------------ */
+            "slidetoggle":
+            {
+                run: function(id)
+                {
+                    $('#'+id+' .readmore').slideToggle('slow');
+                },
+
+                reset: function(id)
+                {}
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Sliding an element in and out of view.</p>
+<p>Click "Run Demo" to slide the div in and out of view.</p>
+<p><a href="#" id="slidetoggle-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="slidetoggle-codebtn" class="codebtn btn actionr">View Code</a></p>
+<div class="demoarea" id="slidetoggle"><div class="readmore" style="display:none">Curabitur placerat commodo augue eget congue. Aliquam id ante leo. Duis at libero magna, at dignissim odio. Aliquam aliquet suscipit mollis. Pellentesque libero tortor, elementum id mattis vel, mattis eget metus. Nam convallis interdum imperdiet. Fusce at magna tellus. Sed mi ante, aliquam at accumsan ac, tristique sit amet dui. Aliquam eleifend molestie ligula. Vivamus eleifend, diam id tincidunt posuere, ipsum dui elementum sapien, posuere pulvinar risus neque id turpis. Nullam volutpat cursus libero, sit amet euismod justo eleifend vitae.</div></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

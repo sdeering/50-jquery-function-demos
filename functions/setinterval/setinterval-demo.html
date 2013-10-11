@@ -1,0 +1,107 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ setInterval Demo 1 ------------------------------ */
+            "setinterval1":
+            {
+                run: function(id)
+                {
+                    var elem = $('#'+id+' .counter');
+                    var count = parseInt(elem.text());
+                    myCounter = setInterval(function() {
+                        count += 1;
+                        elem.html(count);
+                    }, 1000);
+                },
+
+                reset: function(id)
+                {
+                    clearInterval(myCounter);
+                }
+            },
+
+            /* ------------------------------ setInterval Demo 2 ------------------------------ */
+            "setinterval2":
+            {
+                run: function(id)
+                {
+
+                    function updateClock()
+                    {
+                      var currentTime = new Date ( );
+                      var currentHours = currentTime.getHours ( );
+                      var currentMinutes = currentTime.getMinutes ( );
+                      var currentSeconds = currentTime.getSeconds ( );
+                      currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+                      currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+                      var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+                      currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+                      currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+                      var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+                      $('#jq4uclock').html(currentTimeString);
+                    }
+                    updateClock();
+                    myCounter = setInterval(function() {
+                        updateClock();
+                    }, 1000);
+                },
+
+                reset: function(id)
+                {
+                    $('#clock').empty();
+                    $('#'+id).hide();
+                }
+            },
+
+            updateClock: function()
+            {
+              var currentTime = new Date ( );
+              var currentHours = currentTime.getHours ( );
+              var currentMinutes = currentTime.getMinutes ( );
+              var currentSeconds = currentTime.getSeconds ( );
+              currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+              currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+              var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+              currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+              currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+              var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+              $('#jq4uclock').text(currentTimeString);
+            }
+        }
+    }
+
+    </script>
+
+    <style lang="text/css">
+        #jq4uclock {
+          font-size: 42px;
+          line-height: 42px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>Demo 1: Simple time counter.</h3>
+<p>Click "Run Demo" to start the timer and click "Reset" to stop the timer.</p>
+<p><a href="#" id="setinterval1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="setinterval1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="setinterval1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="setinterval1"><span class="counter">0</span> seconds elapsed.</div>
+
+<h3>Demo 2: Digital time display.</h3>
+<p><a href="#" id="setinterval2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="setinterval2-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="setinterval2-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="setinterval2"><span id="jq4uclock"></span></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

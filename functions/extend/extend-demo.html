@@ -1,0 +1,165 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ Extend Demo 1 ------------------------------ */
+            "extend1":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id);
+                    demobox.empty();
+
+                    var forms = {};
+                    forms.enquiry = {
+                        email: 'enquiries@domain.com',
+                        sendForm: function() {
+                            //code which sends email
+                            demobox.append('sending email to: ' + this.email + '...'+'<br/>');
+                        }
+                    }
+
+                    forms.contact = {
+                        email: 'contact@domain.com'
+                    }
+
+                    forms.feedback = {
+                        email: 'feedback@domain.com'
+                    }
+
+                    //Create a new object and copy the sendForm function from forms.enquiry to forms.contact and forms.feedback
+                    forms.contact = $.extend({}, forms.enquiry, forms.contact);
+                    forms.feedback = $.extend({}, forms.enquiry, forms.feedback);
+
+                    forms.enquiry.sendForm();
+                    forms.contact.sendForm();
+                    forms.feedback.sendForm();
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+            },
+
+            /* ------------------------------ Extend Demo 2 ------------------------------ */
+            "extend2":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id);
+
+                    $.fn.createExcerpts = function( options )
+                    {
+
+                        // specify the default options for the plugin
+                        var defaults =
+                        {
+                            "length": "150"
+                        };
+
+                        return this.each(function()
+                        {
+                            // if options exist merge them with our defaults, any duplicates are overwritten
+                            if ( options )
+                            {
+                                $.extend( defaults, options );
+                            }
+
+                            var item_html = $(this).html();
+                            item_html = item_html.replace(/<\/?[^>]+>/gi, ''); //replace html tags
+                            item_html = $.trim(item_html); //trim whitespace
+                            $(this).html(item_html.substring(0,defaults["length"])+'...'); //update the html on page
+                        });
+
+                    };
+
+                    $(".runexcerpts").live('click', function(e)
+                    {
+                        e.preventDefault();
+                        /* get the options */
+                        var excerptLength = $('input[name="excerptLength"]').val();
+                        /* call plugin with customised options */
+                        $('.excerpt').createExcerpts({
+                            "length": excerptLength
+                        });
+                    });
+                },
+
+                reset: function(id){}
+            }
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        .settingsarea {
+            border: 1px solid orange;
+            margin: 20px 0;
+            padding: 15px;
+            text-align: right;
+            width: 400px;
+        }
+        label {
+            float: left;
+        }
+        input[name="excerptLength"] {
+            float:left;
+            margin: 0 10px;
+            text-align: right;
+            width: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>Demo 1: Use $.extend() to copy existing functionality.</h3>
+<p>We will copy the functionality of the enquiry form so that it works for the contact and feedback form. For this example you'll have to study the code to see what is happening - but basically forms.enquiry is a JavaScript Object that has a property called "email" and a function called "sendForm". We are copying this function and overwriting the email into a new JavaScript object's called "forms.contact" and "forms.feedback".</p>
+<p><a href="#" id="extend1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="extend1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="extend1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="extend1"></div>
+
+<h3>Demo 2: Use $.extend() to specify custom settings for a plugin.</h3>
+<p>It is very common to override the default values for jQuery plugin to provide the user with customisable settings. This is done by using the .extend() function. The demo shows how we can create customisable length excerpts of paragraphs. The default is 150 characters.</p>
+<p><a href="#" id="extend2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="extend2-codebtn" class="codebtn btn actionr">View Code</a></p>
+<div class="demoarea" id="extend2">
+
+<div class="settingsarea">
+    <label for="excerptLength">excerpt length: </label> <input type="number" name="excerptLength" value="280"> <br/>
+    <a href="#" class="btn runexcerpts" style="margin: 10px; 0;">Run Excerpts Plugin</a>
+</div>
+
+<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p class="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

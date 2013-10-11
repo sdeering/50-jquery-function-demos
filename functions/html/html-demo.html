@@ -1,0 +1,45 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ html Demo ------------------------------ */
+            "html":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id);
+                    demobox.empty();
+                    demobox.append(demobox.prev().html()+'<br/>');
+                    demobox.append(demobox.prev().text()+'<br/>');
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Getting the content of an element.</p>
+<p><a href="#" id="html-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="html-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="html-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="html" style="border:1px solid orange; padding:20px;"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

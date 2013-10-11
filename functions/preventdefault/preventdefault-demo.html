@@ -1,0 +1,46 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ preventDefault Demo ------------------------------ */
+            "preventdefault":
+            {
+                run: function(id)
+                {
+                    $('#'+id).html('<a href="http://www.jquery4u.com">http://www.jquery4u.com</a>');
+                    $('#'+id+' a').live('click', function(e) {
+                        e.preventDefault();
+                        $('#'+id).html('Prevented going to http://www.jquery4u.com and displayed this message instead.');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Preventing a hyperlink from going to href.</p>
+<p><a href="#" id="preventdefault-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="preventdefault-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="preventdefault-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="preventdefault"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

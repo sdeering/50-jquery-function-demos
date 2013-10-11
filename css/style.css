@@ -1,0 +1,43 @@
+/* AD PACKS CSS */
+#main-sidebar-ads { padding: 10px 0; width: 200px; background-color: white; }
+.adpacks{background:#fff;padding:15px;margin:15px 0 0;border:3px solid #eee;}
+.bsa_it_ad{background:transparent;border:none;font-family:inherit;padding:0 15px 0 10px;margin: 10px 0 0;text-align:center;}
+.bsa_it_ad a { width:135px; text-decoration:none; border: none; border-bottom:0 !important;}
+.bsa_it_t { font-size:14px; text-decoration:none; color:black; display: inline-block; border-bottom:0 !important; padding-left: 5px; }
+.bsa_it_d { font-size:12px; text-decoration:none; font-weight:normal; color:black; border-bottom:0 !important; padding-left: 5px; }
+.bsa_it_ad:hover img{-moz-box-shadow:0 0 3px #000;-webkit-box-shadow:0 0 3px #000;box-shadow:0 0 3px #000;}
+.bsa_it_p{display:none;}
+#bsap_aplink,body #bsap_aplink:hover{color:#E0DEDE;display:block;font-size:10px;margin: 0 15px 0 0;text-align:right; text-decoration:none; border: none; border-bottom:0 !important;}
+
+/* function demos pages */
+#maindemoarea {
+    margin: 10px 15px 10px 2px;
+    min-height: 50px;
+    width: 100%;
+}
+
+.demoarea {
+    display:none;
+    margin-bottom:20px;
+}
+
+.expose {
+    position:relative;
+    background-color: #FFFFFF;
+}
+
+#overlay {
+    background:rgba(0,0,0,0.3);
+    display:none;
+    width:100%; height:100%;
+    position:absolute; top:0; left:0; z-index:99998;
+}
+
+pre.raw {
+    background-color: #F2EFEF;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    line-height: 22px;
+    /*white-space: normal;*/
+}

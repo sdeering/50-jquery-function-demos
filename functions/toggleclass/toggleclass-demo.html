@@ -1,0 +1,55 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ toggleClass Demo ------------------------------ */
+            "toggleclass":
+            {
+                run: function(id)
+                {
+                    $('#'+id)
+                    .live('mouseenter', function(e)
+                    {
+                        $(this).toggleClass('twittreyesopen');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                }
+            },
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        .twittreyesclosed {
+            background: url(images/twitter-eyes-closed.jpg) repeat;
+        }
+        .twittreyesopen {
+            background: url(images/twitter-eyes-open.jpg) repeat;
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>Example: Toggling a CSS class on an element.</h3>
+<p><a href="#" id="toggleclass-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="toggleclass-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="toggleclass-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea twittreyesclosed" id="toggleclass" style="width:700px;height:40px;background-color:#002D46;padding:10px;"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

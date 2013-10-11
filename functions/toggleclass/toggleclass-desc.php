@@ -1,0 +1,1 @@
+The $.toggleClass() function is a <strong>huge time saver</strong> when it comes to have a state either on or off with CSS. The following example sets event handlers for "mouseenter" (the CSS class "img-hover" will be applied to the img) and and "mouseleave" (CSS class removed).

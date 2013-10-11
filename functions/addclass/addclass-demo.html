@@ -1,0 +1,66 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ addClass Demo ------------------------------ */
+            "addclass":
+            {
+                run: function(id)
+                {
+                    $('#'+id+' a').addClass('jq4ubutton');
+                    $('#'+id+' a').bind('click', function(e)
+                    {
+                        e.preventDefault();
+                        alert('click');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' a').removeClass('jq4ubutton');
+                }
+            }
+        }
+    }
+    </script>
+
+    <style lang="text/css">
+    .jq4ubutton {
+        color:white !important;
+       display: block;
+        border: 1px solid;
+        border-color: #aaa #000 #000 #aaa;
+        width: 200px;
+        background: #E57124;
+        color: #fff;
+        text-decoration:none !important; text-align:center; font-weight:bold;
+        padding:10px;
+    }
+    .jq4ubutton:hover {
+        position: relative;
+        top: 1px;
+        left: 1px;
+        border-color: #000 #aaa #aaa #000;
+    }
+    </style>
+
+</head>
+<body>
+
+<p class="example">Demo: Adding a CSS class to an element.</p>
+<p>Click "Run Demo" to add the styles to the button. Click "Reset" to remove styles.</p>
+<p><a href="#" id="addclass-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="addclass-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="addclass-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="addclass"><a href="">Anchor Button</a></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

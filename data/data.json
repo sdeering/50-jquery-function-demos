@@ -1,0 +1,16 @@
+{
+    "apis": {
+        "flickr": {
+            "url": "http://api.flickr.com/services/feeds/groups_pool.gne?id=998875@N22&lang=en-us&format=json&jsoncallback=?"
+        },
+        "twitter": {
+            "url": "http://twitter.com/statuses/user_timeline/smashingmag.json?callback=twitterCallback2&count=5"
+        },
+        "facebook": {
+            "url": "http: //twitter.com/api"
+        },
+        "gmaps": {
+            "url": "http: //twitter.com/api"
+        }
+    }
+}

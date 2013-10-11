@@ -1,0 +1,1 @@
+In this demonstration we're going to make use of jQuery's awesome function chaining ability by running .fadeOut(), .fadeIn() and .delay() functions together on the same element. Very similar to the setTimeout function but without the ability to easily interrupt the delay.

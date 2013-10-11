@@ -1,0 +1,85 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ find Demo ------------------------------ */
+            "find":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id+' #filetree'), demoboxSpans = $('#'+id+' span');
+                    $('#'+id+' .ffbtn').live('click', function(e)
+                    {
+                        demoboxSpans.css({"background-color":""})
+                        demobox.find('.folder').css({"background-color":"yellow"});
+                    });
+                    $('#'+id+' .fibtn').live('click', function(e)
+                    {
+                        demoboxSpans.css({"background-color":""})
+                        demobox.find('.file').css({"background-color":"yellow"});
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' span').css({"background-color":""});
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<h3>Demo: Finding specific descendants of matched elements.</h3>
+<p><a href="#" id="find-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="find-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="find-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="find" style="border:1px solid orange; padding:25px;">
+<button class="ffbtn btn">find(folders)</button> <button class="fibtn btn">find(items)</button>
+<br/><br/>
+    <ul id="filetree">
+        <li><span class="folder">Folder 1</span>
+            <ul>
+                <li><span class="folder">Subfolder 1</span>
+                    <ul>
+                        <li><span class="file">Item 1.1.1</span></li>
+                    </ul>
+                </li>
+                <li><span class="folder">Subfolder 2</span>
+                    <ul>
+                        <li><span class="file">Item 1.2.1</span></li>
+                            <ul>
+                                <li><span class="file">Item 1.2.1.1</span></li>
+                                <li><span class="file">Item 1.2.1.2</span></li>
+                            </ul>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span class="folder">Folder 2</span>
+            <ul>
+                <li><span class="file">Item 1.3.1</span></li>
+                    <ul>
+                        <li><span class="file">Item 1.3.1.1</span></li>
+                        <li><span class="file">Item 1.3.1.2</span></li>
+                    </ul>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

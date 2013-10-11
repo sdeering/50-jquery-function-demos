@@ -1,0 +1,1 @@
+The .find() function is really useful for <strong>matching elements filtered by a selector, jQuery object, or element</strong>. There is also a function called .children() which only searches the direct child siblings of the matched elements.

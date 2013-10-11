@@ -1,0 +1,65 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ stopPropagation Demo ------------------------------ */
+            "stoppropagation":
+            {
+                run: function(id)
+                {
+                    $('#'+id+' .divlink1').bind('click', function(e) {
+                        alert('div clicked');
+                    });
+
+                    $('#'+id+' .divlink1 a').bind('click', function(e) {
+                        e.preventDefault();
+                        alert('link clicked');
+                    });
+
+                    $('#'+id+' .divlink2').bind('click', function(e) {
+                        alert('div clicked');
+                    });
+
+                    $('#'+id+' .divlink2 a').bind('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        alert('link clicked');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Preventing parent container from firing it's event when it's child is clicked.</p>
+<p><a href="#" id="stoppropagation-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="stoppropagation-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="stoppropagation-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="stoppropagation">
+This div doesn't use the .stopPropagation() function.
+<div class="divlink1" style="border:1px solid orange; padding:25px;"><a href="http://www.jquery4u.com" rel="nofollow" target="_blank">http://www.jquery4u.com</a><br/></div><br/>
+This div does use the .stopPropagation() function.
+<div class="divlink2" style="border:1px solid orange; padding:25px;"><a href="http://www.jquery4u.com" rel="nofollow" target="_blank">http://www.jquery4u.com</a><br/></div>
+<p>As you can see when you click the top link it also fires off the div event but the bottom link uses .stopPropagation() which prevents the div event from firing. The div event will still fire when you click inside the div as expected.</p>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

@@ -1,0 +1,78 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ delegate Demo ------------------------------ */
+            "delegate":
+            {
+                run: function(id)
+                {
+                    $('#'+id).css({"display":"inline-block"});
+                    var frequency = .3;
+                    for (var i = 0; i < 32; ++i)
+                    {
+                        var frequency = .3;
+                        for (var i = 0; i < 45; ++i)
+                        {
+                         r   = Math.sin(frequency*i + 0) * 127 + 128;
+                         g = Math.sin(frequency*i + 2) * 127 + 128;
+                         b  = Math.sin(frequency*i + 4) * 127 + 128;
+                         $('#'+id).append('<span class="smallcolor" style="background-color:'+JQFUNCS.RGB2Color(r,g,b)+';"></span>');
+                        }
+                    }
+
+                    $('#'+id).delegate('span', 'hover', function(e)
+                    {
+                        $(this).toggleClass("whitebg");
+                    })
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+
+
+            }
+        },
+
+        RGB2Color: function(r,g,b)
+        {
+          return '#' + this.byte2Hex(r) + this.byte2Hex(g) + this.byte2Hex(b);
+        },
+
+        byte2Hex: function(n)
+        {
+          var nybHexString = "0123456789ABCDEF";
+          return String(nybHexString.substr((n >> 4) & 0x0F,1)) + nybHexString.substr(n & 0x0F,1);
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        .whitebg {background-color: white !important; width:30px!important;}
+        .smallcolor { float:left;width:10px;height:30px; }
+    </style>
+
+</head>
+<body>
+
+<p class="example">Demo: Delegating events to child elements of a root element.</p>
+<p>The demo area is the root element (orange border) with coloured span child elements which have a hover event attached.</p>
+<p><a href="#" id="delegate-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="delegate-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="delegate-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="delegate" style="border:1px solid orange;padding:20px;"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

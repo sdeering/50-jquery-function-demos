@@ -1,0 +1,44 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ Delay Demo ------------------------------ */
+            "delay":
+            {
+                run: function(id)
+                {
+                    $('#'+id)
+                      .hide()
+                      .fadeIn('slow')
+                      .delay(1500)
+                      .fadeOut('slow');
+                },
+
+                reset: function(id)
+                {}
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Using .delay() to create a delay between function calls.</p>
+<p><a href="#" id="delay-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="delay-codebtn" class="codebtn btn actionr">View Code</a></p>
+<div class="demoarea" id="delay">I will show for 1.5 seconds.</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

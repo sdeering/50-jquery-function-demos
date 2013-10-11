@@ -1,0 +1,96 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ filter Demo ------------------------------ */
+            "filter":
+            {
+                run: function(id)
+                {
+                    var demoboxPs = $('#'+id+' p');
+
+                    $('#'+id+' .alternates').live('click', function(e)
+                    {
+                        demoboxPs
+                            .css({"background-color":""})
+                            .filter(':even').css({"background-color":"#E8E8E8"});
+                    });
+
+                    $('#'+id+' .strongs').live('click', function(e)
+                    {
+                        demoboxPs
+                            .css({"background-color":""})
+                            .filter(function(index) {
+                                return $('strong', this).length >= 1;
+                            }).css({"background-color":"#E8E8E8"});
+                    });
+
+                    $('#'+id+' .spazy').live('click', function(e)
+                    {
+                        demoboxPs
+                            .css({"background-color":""})
+                            .filter(function(index) {
+                                return $('span', this).length >= 1;
+                            }).css({"background-color":"#E8E8E8"});
+                    });
+
+                    $('#'+id+' .highlights').live('click', function(e)
+                    {
+                        demoboxPs
+                            .css({"background-color":""})
+                            .filter('.highlight')
+                            .css({"background-color":"yellow"});
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' p').css({"background-color":""});
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        .demoarea p, .demoarea p span, .demoarea p strong {
+            line-height: 25px !important; height: 20px !important;
+            margin-bottom:0 !important; margin:0; padding: 3px 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>Demo: Using filter to match sub elements.</h3>
+<p>In this example, .filter() is used to style paragraphs based on thier content.</p>
+<p><a href="#" id="filter-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="filter-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="filter-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="filter" style="border:1px solid orange; padding:25px;">
+<button class="alternates btn">Alternates</button> <button class="strongs btn">Strong Tags</button> <button class="spazy btn">Span Tags</button> <button class="highlights btn">"highlight" Class</button>
+<br/><br/>
+<p>Paragraph 1</p>
+<p>Paragraph 2 with <span>'span' tag</span></p>
+<p><strong>Paragraph 3 with 'strong' tag</strong></p>
+<p class="highlight">Paragraph 4 with "highlight" class.</p>
+<p>Paragraph 5 with <span>'span' tag</span></p>
+<p>Paragraph 6</p>
+<p><strong>Paragraph 7 with 'strong' tag</strong></p>
+<p>Paragraph 8 with <span>'span' tag</span></p>
+<p>Paragraph 9</p>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

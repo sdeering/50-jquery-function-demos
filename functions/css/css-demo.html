@@ -1,0 +1,67 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ CSS Demo 1 ------------------------------ */
+            "css1":
+            {
+                run: function(id)
+                {
+                    $('div#'+id).css({
+                        "color":"Blue",
+                        "background-color":"orange"
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('div#'+id).css({
+                        "color":"black",
+                        "background-color":"transparent"
+                    });
+                }
+            },
+
+            /* ------------------------------ CSS Demo 2 ------------------------------ */
+            "css2":
+            {
+                run: function(id)
+                {
+                    $("head").append('<link rel="stylesheet" type="text/css" href="/function-demos/functions/css/css/demostyles.css" />');
+                    $('div#'+id).html('Stylesheet demostyles.css added. To revert click reset above.');
+                },
+
+                reset: function(id)
+                {
+                    $('link[href="/function-demos/functions/css/css/demostyles.css"]').remove();
+                    $('div#'+id).html('Stylesheet demostyles.css removed.');
+                }
+            }
+        }
+    }
+    </script>
+
+</head>
+<body>
+
+<h3>Demo 1: Changing text colour and background colour</h3>
+<p><a href="#" id="css1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="css1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="css1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="css1"><p style="font-size:24px;padding:10px;">Blue text with orange background.</p></div>
+
+<h3>Demo 2: Adding a stylesheet.</h3>
+<p><a href="#" id="css2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="css2-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="css2-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="css2" style="padding:0;"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

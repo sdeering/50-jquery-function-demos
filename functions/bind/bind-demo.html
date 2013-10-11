@@ -1,0 +1,116 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ Bind Demo 1 ------------------------------ */
+            "bind1":
+            {
+                run: function(id)
+                {
+                    $('#'+id+' div').bind('click', function(e) {
+                        $(this).html('clicked');
+                    }).bind('mouseenter', function(e) {
+                        $(this).html('mouseenter');
+                    }).bind('mouseleave', function(e) {
+                        $(this).html('mouseleave');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                }
+            },
+
+            /* ------------------------------ Bind Demo 2 ------------------------------ */
+            "bind2":
+            {
+                run: function(id)
+                {
+                    for (n = 0; n <= 10; n++) {
+                        $('#'+id).append('<div class="bigcolordiv" style="background-color:orange;"></div>');
+                    }
+                    $('#'+id+' div').live('dblclick', function(e) {
+                        $(this).css({"opacity":"0"});
+                    }).live('mouseover', function(e) {
+                        $(this).toggleClass('purplebg');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+            },
+
+            /* ------------------------------ Bind Demo 3 ------------------------------ */
+            "bind3":
+            {
+                run: function(id)
+                {
+                    var jq4u = 'jquery4u';
+                    for (n = 0; n <= 7; n++) {
+                        $('#'+id).append('<div class="bigcolordiv key-'+jq4u[n]+'" style="background-color:blue;">'+jq4u[n]+'</div>');
+                    }
+
+                    $(window).bind('keydown', function (key) {
+                        //jquery, 74, 81, 85, 69, 82, 89
+                        var keycode;
+                        if ( key == null ) {
+                            keycode = event.keyCode;
+                        } else {
+                            keycode = key.keyCode;
+                        }
+                        $('#'+id+' .key-'+String.fromCharCode(keycode).toLowerCase()).toggleClass('orangebg');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+            }
+        }
+    }
+    </script>
+
+    <style type="text/css" media="screen">
+        .purplebg {background-color: #C879D8 !important;}
+        .orangebg {background-color: #E57124 !important;}
+        .bigcolordiv {  color: white;  float: left;  font-size: 36px;  height: 50px;  line-height: 46px; margin-right: 5px;  text-align: center;  text-transform: capitalize;  vertical-align: middle;  width: 50px; margin-bottom: 10px; }
+        #bind2, #bind3 { display:inline-block; }
+        #bind3 { margin-bottom: 0 !important; }
+    </style>
+
+</head>
+<body>
+
+<p class="example">Demo 1: Event when user clicks or hovers a div.</p>
+<p><a href="#" id="bind1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="bind1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="bind1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="bind1">
+<div style="padding:25px;background-color:green;color:white;font-size:18px;"></div>
+</div>
+
+<p class="example">Demo 2: Event when mouse hovers or double clicks a div.</p>
+<p>Press "Run Demo" a few times in a row for some nice effects. Also you can double click the boxes to make the disappear!</p>
+<p><a href="#" id="bind2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="bind2-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="bind2-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="bind2" style="display:inline-block"></div>
+
+<p class="example">Demo 3: Event a user presses a keyboard key.</p>
+<p>Press any keyboard key that is in the boxes below.</p>
+<p><a href="#" id="bind3-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="bind3-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="bind3-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="bind3" style="display:inline-block"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

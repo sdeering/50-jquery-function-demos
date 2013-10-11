@@ -1,0 +1,47 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ setTimeout Demo ------------------------------ */
+            "settimeout":
+            {
+              run: function(id)
+              {
+                $('#'+id).html('This text will dissapear after 3 seconds.');
+                timeout = setTimeout( function() {
+                  $('#'+id).fadeOut();
+                }, 3000);
+              },
+
+              reset: function(id)
+              {
+                clearTimeout(timeout);
+                $('#'+id).html('This text will now not dissapear.');
+              }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Doing something after a specified length of time.</p>
+<p>Click "Run Demo" to set the timeout and click "Reset" to clear the timeout.</p>
+<p><a href="#" id="settimeout-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="settimeout-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="settimeout-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="settimeout">This text will dissapear after 3 seconds.</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

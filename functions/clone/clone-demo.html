@@ -1,0 +1,50 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ clone Demo ------------------------------ */
+            "clone":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id);
+                    demobox.empty();
+                    demobox.append('<a href="#" class="clone">Clone Bee</a><br/>');
+                    demobox.append('<img class="bee" src="/function-demos/images/bee.gif" height="51px" width="59px" alt="bee" />');
+                    $('#'+id+' .clone').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        $('#'+id+' img.bee:first').clone().appendTo(demobox);
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).html('');
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Cloning an element</p>
+<p><a href="#" id="clone-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="clone-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="clone-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="clone"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

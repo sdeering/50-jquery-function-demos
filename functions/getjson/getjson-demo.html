@@ -1,0 +1,56 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ getJSON Demo ------------------------------ */
+            "getjson":
+            {
+                run: function(id)
+                {
+                    $.getJSON('/function-demos/data/colors.json', function(data)
+                    {
+                        console.log(data);
+                        var options = $('#'+id+' select');
+                        $('#'+id+' select').append('<option value="">Select Colour</select>');
+                        $.each(data.colors[0], function(i,v) {
+                            options.append($("<option />").val(v).text(i));
+                        });
+                    });
+
+                    $('#'+id+' select').live('change', function(e)
+                    {
+                        $('#'+id).css({"background-color":$(this).val()});
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' select').html('');
+                    $('#'+id).css({"background-color":""});
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Using $.getJSON() to populate options in a drop down list.</p>
+<p><a href="#" id="getjson-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="getjson-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="getjson-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="getjson"><form style="width:200px;"><select></select></form></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

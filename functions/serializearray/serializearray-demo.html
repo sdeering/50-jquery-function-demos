@@ -1,0 +1,93 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ serializeArray Demo 1 ------------------------------ */
+            "serializearray1":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id);
+                    var fields = $('#myForm').serializeArray(), fieldDetails;
+                    demobox.empty();
+                    $.each(fields, function (i, field) {
+                        demobox.append(field.name + '=' + field.value + '<br/>');
+                    });
+                },
+
+                reset: function(id)
+                {}
+            },
+
+            /* ------------------------------ serializeArray Demo 2 ------------------------------ */
+            "serializearray2":
+            {
+                run: function(id)
+                {
+                    var $form = $('#myForm');
+                    var url = $form.attr('action') + '?' + $form.serialize();
+                    $('#'+id).html(url);
+                },
+
+                reset: function(id)
+                {}
+            }
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        form {
+            margin-bottom: 18px;
+            text-align: left;
+            width: 220px;
+        }
+        label {
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+
+<p>To run the demo simply enter anything into the form and click "Run Demo" below in the examples.</p>
+<!-- HTML Form -->
+<form id="myForm" action="http://www.domain.com/sendMessage">
+    <label for="name">Name</label>
+    <input type="text" size="30" name="name" id="name" value="Joe Bloggs">
+
+    <label for="email">Email</label>
+    <input type="text" size="30" name="email" id="email" value="joe@bloggs.com">
+
+    <label for="phone">Phone</label>
+    <input type="text" size="30" name="phone" id="phone" value="123456789">
+
+    <label for="message">Message</label>
+    <textarea rows="5" name="message" id="message" cols="30">My name is not John Smith.</textarea>
+
+    <button id="send-message" class="btn" disabled="disabled">Send Message</button>
+</form>
+
+<p class="example">Demo 1: Create an array of all the form field values</p>
+<p><a href="#" id="serializearray1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="serializearray1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="serializearray1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="serializearray1"></div>
+
+<p class="example">Demo 2: Create a url string with all the form field values</p>
+<p><a href="#" id="serializearray2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="serializearray2-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="serializearray2-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="serializearray2"></div>
+
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

@@ -1,0 +1,78 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ data Demo ------------------------------ */
+            "data":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id), demoboxInput = $('#'+id+' input'), datadisplay = $('#'+id+' #datadisplay');
+
+                    $('#'+id+' .set').bind('click', function(e)
+                    {
+                        e.preventDefault();
+                        datadisplay.html($.data(demobox,"field1",demoboxInput.val()));
+                    });
+
+                    $('#'+id+' .get').bind('click', function(e)
+                    {
+                        e.preventDefault();
+                        alert($.data(demobox,"field1"));
+                    });
+
+                    $('#'+id+' .has').bind('click', function(e)
+                    {
+                        e.preventDefault();
+                        alert($.hasData(demobox));
+                    });
+
+                    $('#'+id+' .remove').bind('click', function(e)
+                    {
+                        e.preventDefault();
+                        $.removeData(demobox);
+                        datadisplay.html($.data(demobox));
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' input').removeData().val('');
+                    $('#'+id+' #datadisplay').empty();
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Attaching data to DOM elements.</p>
+<p>The following example set/get a data object onto the div for this demo area.</p>
+<p><a href="#" id="data-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="data-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="data-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="data" style="border:1px solid orange; padding:25px;height: 100px;">
+    <div style="width:300px;float:left;">
+        <form><label>Enter something: </label><input/></form>
+        <a class="set" href="#">Set data</a> | <a class="get" href="#">Get data</a> | <a class="has" href="#">Has data?</a> | <a class="remove" href="#">Remove data</a>
+    </div>
+    <div style="width:250px; display:inline-block; height: 50px;font-size:16px;color:blue;">
+        Data: <span id="datadisplay" style="padding 25px;"></span>
+    </div>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

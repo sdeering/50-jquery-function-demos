@@ -1,0 +1,28 @@
+.resetbtn {
+	background-color: red !important;
+}
+
+* {
+	color: white !important;
+	background-color: black !important;
+	background-image: none !important;
+}
+a {
+	color: white;
+	background-color: black;
+}
+a:hover {
+	color: orange;
+}
+.example {
+	font-weight: bold;
+	color:orange;
+	background-color: #1D8478 !important;
+}
+pre {
+	background-color: #E5E5E5 !important;
+	color: black !important;
+}
+h1, h2, h3, h4 {
+	color: white;
+}

@@ -1,0 +1,108 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ Animation Demo 1 ------------------------------ */
+            "animate1":
+            {
+                run: function(id)
+                {
+                    $('#'+id)
+                    .html('This text is bigger than before.')
+                    .animate({
+                        fontSize: "30px"
+                    }, 1500);
+                },
+                reset: function(id)
+                {
+                    $('#'+id)
+                    .animate({
+                        fontSize: "12px"
+                    }, 1500, function() {
+                        $(this).html('This text is smaller than before.')
+                    });
+                }
+            },
+
+            /* ------------------------------ Animation Demo 2 ------------------------------ */
+            "animate2":
+            {
+                run: function(id)
+                {
+                    $('#'+id).animate({
+                        width:600,
+                        height:160
+                    }, 2500);
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).animate({
+                        width:0,
+                        height:0
+                    }, 2500);
+                }
+            },
+
+            /* ------------------------------ Animation Demo 3 ------------------------------ */
+            "animate3":
+            {
+                run: function(id)
+                {
+                    $('#car1').animate({marginLeft: "+=550px"}, 2000);
+                    $('#car2').animate({marginLeft: "+=550px"}, 800);
+                    $('#car3').animate({marginLeft: "+=550px"}, 5500);
+                    $('#car4').animate({marginLeft: "+=550px"}, 2500);
+                    $('#car5').animate({marginLeft: "+=550px"}, 4000);
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' img').each( function(i,v)
+                    {
+                        $(this).stop().css({'margin':'0'});
+                    });
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<h3 class="example">Demo 1: Animate text</h3>
+<p>You can easily animate the size of text.</p>
+<p><a href="#" id="animate1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="animate1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="animate1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="animate1" style="width:600px;height:35px;"></div>
+
+<h3 class="example">Demo 2: Animate size</h3>
+<p>You can easily animate the size of a div.</p>
+<p><a href="#" id="animate2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="animate2-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="animate2-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="animate2" style="width:200px;height:0px;overflow:hidden;"><img src="/function-demos/images/jquery-books.jpg" alt="jquery books" /></div>
+
+<h3 class="example">Demo 3: Animate movement</h3>
+<p>JQuery's .animate() function is ansyncronous so <strong>multiple animations can run at the same time</strong>. You can also use the .stop() function to stop the animation.</p>
+<p><a href="#" id="animate3-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="animate3-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="animate3-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="animate3">
+    <img id="car1" src="/function-demos/images/car1.jpg" alt="jquery car 1" /><br/>
+    <img id="car2" src="/function-demos/images/car2.jpg" alt="jquery car 2" /><br/>
+    <img id="car3" src="/function-demos/images/car3.jpg" alt="jquery car 3" /><br/>
+    <img id="car4" src="/function-demos/images/car4.jpg" alt="jquery car 4" /><br/>
+    <img id="car5" src="/function-demos/images/car5.jpg" alt="jquery car 5" /><br/>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

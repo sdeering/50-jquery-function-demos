@@ -1,0 +1,110 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ Match Demo 1 ------------------------------ */
+            "match1":
+            {
+                run: function(id)
+                {
+                    var thehtml = $('#'+id+' p').text(), emailRegex= /[\._a-zA-Z0-9-]+@[\._a-zA-Z0-9-]+/igm;
+
+                    $('#'+id+' button.test').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        alert(emailRegex.test(thehtml));
+                    });
+
+                    $('#'+id+' button.extract').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        var resultbox = $('#'+id+' .extractedemails');
+                        resultbox.empty();
+                        var mEs = thehtml.match(emailRegex), len = mEs.length;
+                        $.each(mEs, function(index, value) {
+                             resultbox.append(value);
+                             (index !== len - 1) ? resultbox.append(', ') : '';
+                        });
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                    $('#'+id+' .extractedemails').empty();
+                }
+            },
+
+            /* ------------------------------ Match Demo 2 ------------------------------ */
+            "match2":
+            {
+                run: function(id)
+                {
+                    var demobox = $('#'+id);
+                    $('#'+id+' button.contains').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        $('#'+id+' li').css({"font-weight": "normal","color":"black"});
+                        var searchtxt = $('#'+id+' input.contains').val();
+                        $('#'+id+' li:contains("'+searchtxt+'")').css({"font-weight": "bold","color":"green"});
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id+' li').css({"font-weight": "normal","color":"black"});
+                    $('#'+id+' input.contains').val('sit amet');
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        .extractedemails {
+            color: green;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>Demo 1: Extract email addresses from inside HTML (string).</h3>
+<p>We can use .test() to check if there are any emails present and .match() to extract them.</p>
+<p><a href="#" id="match1-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="match1-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="match1-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="match1"><p>Curabitur placerat commodo augue eget congue. Aliquam id ante leo. Duis at libero magna, at dignissim odio. Aliquam aliquet suscipit mollis. Pellentesque libero tortor, elementum id mattis vel, mattis eget metus. sombody1@somewhere.com Nam convallis interdum imperdiet. Fusce at magna tellus. Sed mi ante, aliquam at accumsan ac, tristique sit amet dui. Aliquam eleifend molestie ligula. Vivamus eleifend, sombody2@somewhere.com diam id tincidunt posuere, ipsum dui elementum sapien, posuere pulvinar risus neque id turpis. Nullam volutpat cursus libero, sit amet euismod justo eleifend vitae.</p>
+<button class="btn test">Emails are present?</button> <button class="btn extract">Extract Emails</button><span class="extractedemails"></span>
+</div>
+
+<h3>Demo 2: Using jQuery :contains() selector to match elements with substrings.</h3>
+<p>We can use the case sensitive :contains() selector to match substrings inside any of that element's descendants. Remember it is <strong>case sensitive</strong> and will <strong>match the entire element</strong>.</p>
+<p><a href="#" id="match2-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="match2-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="match2-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="match2">
+<ul class="listnomargin">
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+<li>Curabitur quis arcu ac justo pellentesque ullamcorper sit amet quis mi.</li>
+<li>Nam a lorem quis lacus dapibus egestas et a ipsum.</li>
+<li>Phasellus nec magna quis diam cursus egestas quis aliquet tortor.</li>
+<li>Ut feugiat vestibulum mi, sit amet consequat orci facilisis ac.</li>
+<li>Phasellus et enim ut sem dapibus hendrerit.</li>
+</ul>
+Search: <input type="text" class="contains" value="sit amet" /> <button class="btn contains">:contains(Search)</button>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

@@ -1,0 +1,98 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ stopImmediatePropagation Demo ------------------------------ */
+            "stopimmediatepropagation":
+            {
+                run: function(id)
+                {
+                    $('#'+id+' .divlink1 a').bind('click', function (e) {
+                       e.preventDefault();
+                       alert('Event code for all links...');
+                    });
+
+                    $('#'+id+' .divlink1').bind('click', function (e) {
+                       alert('Event code for div click...');
+                    });
+
+                    $('#'+id+' .divlink1 a.link1').bind('click', function (e) {
+                       e.preventDefault();
+                       alert('Event code for link 1...');
+                    });
+
+                    $('#'+id+' .divlink1 a.link2').bind('click', function (e) {
+                        e.preventDefault();
+                       alert('Event code for link 2...');
+                    });
+                    $('#'+id+' .divlink1 a.link3').bind('click', function (e) {
+                        e.preventDefault();
+                       alert('Event code for link 3...');
+                    });
+
+                    $('#'+id+' .divlink2 a').bind('click', function (e) {
+                       e.preventDefault();
+                       alert('Event code for all links...');
+                       e.stopImmediatePropagation();
+                    });
+
+                    $('#'+id+' .divlink2').bind('click', function (e) {
+                       alert('Event code for div click...');
+                    });
+
+                    $('#'+id+' .divlink2 a').bind('click', function (e) {
+                       alert('Event code for link 1...');
+                    });
+
+                    $('#'+id+' .divlink2 a.link2').bind('click', function (e) {
+                       alert('Event code for link 2...');
+                    });
+                    $('#'+id+' .divlink2 a.link3').bind('click', function (e) {
+                       alert('Event code for link 3...');
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<p class="example">Demo: Preventing all future bound events from firing.</p>
+<p><a href="#" id="stopimmediatepropagation-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="stopimmediatepropagation-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="stopimmediatepropagation-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="stopimmediatepropagation">
+    This div doesn't use the .stopImmediatePropagation() function.
+    <div class="divlink1" style="border:1px solid orange; padding:25px;">
+    Link 1: <a class="link1" href="http://jquery4u.com" target="_blank" rel="nofollow">http://www.jquery4u.com</a><br/>
+    Link 2: <a class="link2" href="http://jquery4u.com" target="_blank" rel="nofollow">http://www.jquery4u.com</a><br/>
+    Link 3: <a class="link3" href="http://jquery4u.com" target="_blank" rel="nofollow">http://www.jquery4u.com</a><br/>
+    </div><br/>
+    This div does use the .stopImmediatePropagation() function.
+    <div class="divlink2" style="border:1px solid orange; padding:25px;">
+    Link 1: <a class="link1" href="http://jquery4u.com" target="_blank" rel="nofollow">http://www.jquery4u.com</a><br/>
+    Link 2: <a class="link2" href="http://jquery4u.com" target="_blank" rel="nofollow">http://www.jquery4u.com</a><br/>
+    Link 3: <a class="link3" href="http://jquery4u.com" target="_blank" rel="nofollow">http://www.jquery4u.com</a><br/>
+    </div>
+<p>As you can see when you click the links in the top div all events fire off. But when you click the links in the bottom div only the code for all links fires off as is calls .stopImmediatePropagation() on the event. It is also worth noting this function <strong>also prevents the event from happening on any ancestor elements</strong> just like the .stopPropagation() function as seen in the example where the div 'click' event doesn't fire on the bottom links.</p>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

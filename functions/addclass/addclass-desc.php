@@ -1,0 +1,1 @@
+In addition to the .css() function you can <strong>apply current css styles</strong> by using the .addClass() function. It's counterpart function is .removeClass().

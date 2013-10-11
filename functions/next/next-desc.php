@@ -1,0 +1,1 @@
+The .prev() and .next() functions can be used to <strong>reference the immediate preceeding element or next element in the set of matched elements</strong> (DOM hierarchy). You can also add a selector to the functions which acts as a filter on the elements, this is shown in the example.

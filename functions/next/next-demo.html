@@ -1,0 +1,82 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ next() Demo ------------------------------ */
+            "next":
+            {
+                run: function(id)
+                {
+                    var $curr = $('#'+id+' li:first');
+                    $curr.addClass("orangebg");
+                    $('#'+id+' a').live('click', function(e)
+                    {
+                        e.preventDefault();
+                        $curr.removeClass("orangebg");
+                        if ($(this).hasClass("next"))
+                        {
+                            if ($curr.next().html()) {
+                                $curr = $curr.next();
+                            }
+                        }
+                        else
+                        {
+                            if ($curr.prev().html()) {
+                                $curr = $curr.prev();
+                            }
+                        }
+                        $curr.addClass("orangebg");
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+    <style type="text/css" media="screen">
+        .orangebg {background-color: #B1EFE9 !important; font-size:120%; }
+        .demoarea ul {
+            margin-top: 10px;
+            font-size: 24px;
+        }
+        .demoarea li {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+<p class="example">Demo: Referencing the previous/next elements in a list.</p>
+<p><a href="#" id="next-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="next-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="next-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="next" style="border:1px solid orange; padding:20px;">
+<a class="prev btn" href="#" style="text-decoration:none;">< Prev</a>  <a class="next btn" href="#" style="text-decoration:none;">Next ></a>
+
+<ul>
+   <li>list item 1</li>
+   <li>list item 2</li>
+   <li>list item 3</li>
+   <li>list item 4</li>
+   <li>list item 5</li>
+</ul>
+</div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

@@ -1,0 +1,1 @@
+The .slice() function allows us to easily <strong>specify a subset of elements to perform actions on</strong>. It takes two parameters: start and end indices of sub elements in a matched parent element.

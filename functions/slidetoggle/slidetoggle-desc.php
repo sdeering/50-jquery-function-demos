@@ -1,0 +1,1 @@
+There are various toggle functions that jQuery provides which save us heaps of time when we want to bind related events to the same element. For example .slideToggle() binds both .slideUp() and .slideDown() to the element and also manages what state for us.

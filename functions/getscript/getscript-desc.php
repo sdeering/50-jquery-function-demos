@@ -1,0 +1,1 @@
+The $.getScript function is an AJAX <strong>shorthand method for inserting JavaScript</strong> into the web page. This example loads in a geographical location JavaScript file which contains geo location functions we can call to access your current location (or more specifically the location of your ISP).

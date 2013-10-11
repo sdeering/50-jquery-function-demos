@@ -1,0 +1,1 @@
+The jQuery .clone() function is pretty simple to use and basically just copies the element you specify into a new element. There is also another great example of the .clone() method on the blog <a href="http://www.jquery4u.com/dynamic-css-2/inserting-element-cloning-jquery/">Creating web page preview bars using .clone()</a>.

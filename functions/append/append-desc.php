@@ -1,0 +1,2 @@
+<strong>.append(), prepend(), .after() and .before()</strong><br/>
+These functions provide good alternatives to .html() for inserting content into your web page. Although it may appear trivial, they have thier own purpose and it's definately worth knowing exactly where they will place your content to save time.

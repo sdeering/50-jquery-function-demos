@@ -1,0 +1,54 @@
+<!-- Copyright 2011 jQuery4u.com -->
+<!DOCTYPE html>
+<html>
+<title>jQuery Function Demo - jQuery4u.com</title>
+<head>
+    <script src="http://www.jquery4u.com/function-demos/js/jquery-1.6.4.min.js"></script>
+    <script src="http://www.jquery4u.com/scripts/function-demos-script.js"></script>
+
+    <script type="text/javascript">
+
+    var JQFUNCS =
+    {
+        runFunc:
+        {
+            /* ------------------------------ live Demo ------------------------------ */
+            "live":
+            {
+                run: function(id)
+                {
+                    $('#'+id).append('<div style="text-align:center;width:688px;height:268px;background-color:black;"></div>');
+                    $('#'+id+' div').live('mouseenter', function(e)
+                    {
+                        $(this).css("background","url(/function-demos/images/cats-eyes.jpg) no-repeat top center");
+                    }).live('mouseleave', function(e)
+                    {
+                        $(this).css({
+                            "background":"none no-repeat top center",
+                            "background-color":"black"
+                        });
+                    });
+                },
+
+                reset: function(id)
+                {
+                    $('#'+id).empty().hide();
+                }
+            }
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+
+<h3>Example: Capturing events on new or changed elements.</h3>
+<p>When the mouse moves through the div it toggles the background image class to show twitter eyes open.</p>
+<p>Click "Run Demo" to dynamically insert a div element with a black background. When the div is hovered it loads in a background image.</p>
+<p><a href="#" id="live-demobtn" class="demobtn btn actionr">Run Demo</a> <a href="#" id="live-codebtn" class="codebtn btn actionr">View Code</a> <a href="#" id="live-resetbtn" class="resetbtn btn actionr" style="display: none;">Reset</a></p>
+<div class="demoarea" id="live"></div>
+
+</body>
+</html>
+<!-- Copyright 2011 jQuery4u.com -->

@@ -1,0 +1,1 @@
+The $.getScript function is an AJAX <strong>shorthand method for inserting HTML</strong> straight into a matched element on the web page.

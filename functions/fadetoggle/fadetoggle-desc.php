@@ -1,0 +1,1 @@
+The same as .slideToggle() but with a fading effect. The .fadeToggle() uses the popular .fadeIn() and .fadeOut() events to show and hide content on a web page.
