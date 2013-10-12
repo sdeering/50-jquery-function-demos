@@ -19,6 +19,11 @@ This repo contains the entire code listing of the demos for my Smashing Magazine
 
 
 
+**Updates & Pull Requests**
+
+I would like to get these functions up to date and working with the latest versions of jQuery so please fork and submit pull requests so we can make this happen.
+
+
 **Function URL List**
 
 
@@ -104,8 +109,3 @@ http://www.jquery4u.com/function-demos/next/
 http://www.jquery4u.com/function-demos/extend/
 
 http://www.jquery4u.com/function-demos/serializearray/
-
-
-**Updates & Pull Requests**
-
-I would like to get these functions up to date and working with the latest versions of jQuery so please fork and submit pull requests so we can make this happen.
