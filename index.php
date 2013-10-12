@@ -111,6 +111,7 @@
           </ul>
         </div>
 
+
       </div>
       <div class="content">
 
@@ -148,8 +149,9 @@
           <div class="span9 expose exposedownload" style="width:90%">
             <h2 id="download">Download</h2>
             <p>The download package includes all the inline HTML, CSS, JavaScript, jQuery and images required for the <?php echo $fn; ?> function demo so you can try it yourself and change as you please.
+              <p><strong>The full code listing for all jQuery functions have been now added to GitHub, you can get them there, we are making them work with the latest versions of jQuery!</strong></p>
               <ul>
-                <li><a href="<?php echo $download_link; ?>"><?php echo $download_text; ?></a></li>
+                <li><a href="https://github.com/sdeering/50-jquery-function-demos/tree/master/functions"><?php echo $download_text; ?></a></li>
               </ul>
             </p>
 
