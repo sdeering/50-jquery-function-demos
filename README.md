@@ -1,4 +1,5 @@
 **50 jQuery Function Demos**
+============================
 
 This repo contains the entire code listing of the demos for my Smashing Magazine post <a href="http://coding.smashingmagazine.com/2012/05/31/50-jquery-function-demos-for-aspiring-web-developers/">50 Useful jQuery Function Demos For Your Projects</a>.
 
